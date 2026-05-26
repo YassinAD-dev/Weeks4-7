@@ -8,6 +8,10 @@ public class Trainer : MonoBehaviour
     public Camera gameCamera;
     public Color caughtColour;
 
+public Hider creatureHider;
+
+
+
     public List<SpriteRenderer> uncaughtCreatures;
     public List<SpriteRenderer> caughtCreatures;
 
@@ -53,6 +57,9 @@ public class Trainer : MonoBehaviour
                 bool isCreatureCaught = caughtCreatures.Contains(pokachu);
                 if (!isCreatureCaught)
                 {
+                    creatureHider.Hide();
+
+
                     caughtCreatures.Add(pokachu);
                 }
 
