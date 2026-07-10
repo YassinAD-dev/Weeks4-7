@@ -1,8 +1,14 @@
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Movingwithkeyboard : MonoBehaviour
 {
     public float Speed;
+    public UnityEvent onClick;
+    public void increaseSpeed()
+    {
+        Speed += 5f;
+    }
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +18,7 @@ public class Movingwithkeyboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.up * Speed * Time.deltaTime;
@@ -32,5 +39,11 @@ public class Movingwithkeyboard : MonoBehaviour
             transform.position += Vector3.right * Speed * Time.deltaTime;
 
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            onClick.Invoke();
+
+        }
+
     }
 }
