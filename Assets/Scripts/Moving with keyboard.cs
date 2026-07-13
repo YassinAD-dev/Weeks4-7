@@ -3,12 +3,17 @@ using UnityEngine.Events;
 public class Movingwithkeyboard : MonoBehaviour
 {
     public float Speed;
+    public SpriteRenderer sprite;
     public UnityEvent onClick;
     public void increaseSpeed()
     {
         Speed += 5f;
     }
-    
+    public void changeColor()
+    {
+      sprite.color = Color.blue;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,6 +49,6 @@ public class Movingwithkeyboard : MonoBehaviour
             onClick.Invoke();
 
         }
-
+        
     }
 }
